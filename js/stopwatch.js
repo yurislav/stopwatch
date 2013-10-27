@@ -79,7 +79,16 @@ function setupStopwatch() {
       seconds = "0" + seconds;
     }
 
-    return minutes + ":" + seconds;
+    var miliseconds = d.getMilliseconds();
+    
+    if (miliseconds < 100) {
+      miliseconds = "00" + miliseconds;
+    }
+    else if (miliseconds < 10) {
+      miliseconds = "0" + miliseconds;
+    }
+
+    return minutes + ":" + seconds + ":" + miliseconds;
   }
 }
 
